@@ -53,7 +53,7 @@ public class ExternalTaskAccessService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    @Value("${app.base-url:http://localhost:5173}")
+    @Value("${app.base-url:https://bionova-sable.vercel.app}")
     private String baseUrl;
 
     /**
@@ -108,7 +108,7 @@ public class ExternalTaskAccessService {
             }
         }
 
-        String cleanBaseUrl = (baseUrl != null && !baseUrl.trim().isEmpty()) ? baseUrl.trim() : "http://localhost:5173";
+        String cleanBaseUrl = (baseUrl != null && !baseUrl.trim().isEmpty()) ? baseUrl.trim() : "https://bionova-sable.vercel.app";
         if (cleanBaseUrl.endsWith("/")) {
             cleanBaseUrl = cleanBaseUrl.substring(0, cleanBaseUrl.length() - 1);
         }
@@ -180,7 +180,7 @@ public class ExternalTaskAccessService {
             }
         }
 
-        String cleanBaseUrl = (baseUrl != null && !baseUrl.trim().isEmpty()) ? baseUrl.trim() : "http://localhost:5173";
+        String cleanBaseUrl = (baseUrl != null && !baseUrl.trim().isEmpty()) ? baseUrl.trim() : "https://bionova-sable.vercel.app";
         if (cleanBaseUrl.endsWith("/")) {
             cleanBaseUrl = cleanBaseUrl.substring(0, cleanBaseUrl.length() - 1);
         }
@@ -587,7 +587,7 @@ public class ExternalTaskAccessService {
 
         ExternalEmployee extEmp = task.getExtEmpId() != null ? externalEmployeeRepository.findById(task.getExtEmpId()).orElse(null) : null;
 
-        String cleanBaseUrl = (baseUrl != null && !baseUrl.trim().isEmpty()) ? baseUrl.trim() : "http://localhost:5173";
+        String cleanBaseUrl = (baseUrl != null && !baseUrl.trim().isEmpty()) ? baseUrl.trim() : "https://bionova-sable.vercel.app";
         if (cleanBaseUrl.endsWith("/")) {
             cleanBaseUrl = cleanBaseUrl.substring(0, cleanBaseUrl.length() - 1);
         }
